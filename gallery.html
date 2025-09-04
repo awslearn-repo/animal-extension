@@ -114,6 +114,47 @@
   <meta name="description" content="All animal images in one gallery view" />
   <meta name="robots" content="noindex" />
   <script>
+    function buildWikimediaFallbackUrl(url, width) {
+      try {
+        const u = new URL(url, location.href);
+        if (u.hostname !== 'upload.wikimedia.org') return null;
+        const parts = u.pathname.split('/');
+        const fileName = parts[parts.length - 1];
+        if (!fileName) return null;
+        const encoded = encodeURIComponent(fileName);
+        const w = width ? `?width=${width}` : '';
+        return `https://commons.wikimedia.org/wiki/Special:FilePath/${encoded}${w}`;
+      } catch {
+        return null;
+      }
+    }
+
+    function setImageWithFallback(img, primaryUrl, name, width = 800, height = 600) {
+      const placeholder = `https://placehold.co/${width}x${height}?text=${encodeURIComponent(name || 'Image')}`;
+      const candidates = [];
+      if (primaryUrl) candidates.push(primaryUrl);
+      const wm = buildWikimediaFallbackUrl(primaryUrl, Math.max(width, 800));
+      if (wm) candidates.push(wm);
+      let index = 0;
+      img.referrerPolicy = 'no-referrer';
+      const tryNext = () => {
+        if (index < candidates.length) {
+          img.src = candidates[index++];
+        } else {
+          img.src = placeholder;
+        }
+      };
+      img.onerror = () => {
+        if (img.dataset.fallbackTried === '1') {
+          img.onerror = null;
+          img.src = placeholder;
+          return;
+        }
+        img.dataset.fallbackTried = '1';
+        tryNext();
+      };
+      tryNext();
+    }
     const loadAnimalsAndRender = async () => {
       const gridElement = document.getElementById('grid');
       const statusElement = document.getElementById('status');
@@ -144,13 +185,7 @@
           img.loading = 'lazy';
           img.decoding = 'async';
           img.alt = `${name} (${category})`;
-          img.referrerPolicy = 'no-referrer';
-          img.src = imageUrl;
-          img.onerror = () => {
-            if (img.dataset.fallback === '1') return;
-            img.dataset.fallback = '1';
-            img.src = `https://placehold.co/800x600?text=${encodeURIComponent(name)}`;
-          };
+          setImageWithFallback(img, imageUrl, name, 800, 600);
 
           const meta = document.createElement('div');
           meta.className = 'meta';

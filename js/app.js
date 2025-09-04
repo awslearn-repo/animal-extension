@@ -74,6 +74,48 @@
     try { return decodeURIComponent(value); } catch { return value; }
   }
 
+  function buildWikimediaFallbackUrl(url, width) {
+    try {
+      const u = new URL(url, location.href);
+      if (u.hostname !== 'upload.wikimedia.org') return null;
+      const parts = u.pathname.split('/');
+      const fileName = parts[parts.length - 1];
+      if (!fileName) return null;
+      const encoded = encodeURIComponent(fileName);
+      const w = width ? `?width=${width}` : '';
+      return `https://commons.wikimedia.org/wiki/Special:FilePath/${encoded}${w}`;
+    } catch {
+      return null;
+    }
+  }
+
+  function setImageWithFallback(img, primaryUrl, name, width = 800, height = 600) {
+    const placeholder = `https://placehold.co/${width}x${height}?text=${encodeURIComponent(name || 'Image')}`;
+    const candidates = [];
+    if (primaryUrl) candidates.push(primaryUrl);
+    const wm = buildWikimediaFallbackUrl(primaryUrl, Math.max(width, 800));
+    if (wm) candidates.push(wm);
+    let index = 0;
+    img.referrerPolicy = 'no-referrer';
+    const tryNext = () => {
+      if (index < candidates.length) {
+        img.src = candidates[index++];
+      } else {
+        img.src = placeholder;
+      }
+    };
+    img.onerror = () => {
+      if (img.dataset.fallbackTried === '1') {
+        img.onerror = null;
+        img.src = placeholder;
+        return;
+      }
+      img.dataset.fallbackTried = '1';
+      tryNext();
+    };
+    tryNext();
+  }
+
   function renderFromHash() {
     const { route, p1, p2 } = parseHash();
     closeModal(true);
@@ -138,15 +180,9 @@
       const media = document.createElement('div');
       media.className = 'card-media';
       const img = document.createElement('img');
-      img.src = firstAnimal.imageUrl;
       img.alt = `${category.name} cover`;
       img.loading = 'lazy';
-      img.referrerPolicy = 'no-referrer';
-      img.onerror = () => {
-        if (img.dataset.fallback === '1') return;
-        img.dataset.fallback = '1';
-        img.src = `https://placehold.co/800x600?text=${encodeURIComponent(category.name)}`;
-      };
+      setImageWithFallback(img, firstAnimal.imageUrl, category.name, 800, 600);
       media.appendChild(img);
 
       const chip = document.createElement('div');
@@ -179,15 +215,9 @@
       const media = document.createElement('div');
       media.className = 'card-media';
       const img = document.createElement('img');
-      img.src = animal.imageUrl;
       img.alt = animal.name;
       img.loading = 'lazy';
-      img.referrerPolicy = 'no-referrer';
-      img.onerror = () => {
-        if (img.dataset.fallback === '1') return;
-        img.dataset.fallback = '1';
-        img.src = `https://placehold.co/800x600?text=${encodeURIComponent(animal.name)}`;
-      };
+      setImageWithFallback(img, animal.imageUrl, animal.name, 800, 600);
       media.appendChild(img);
 
       const title = document.createElement('div');
@@ -211,14 +241,8 @@
 
     state.currentAnimal = animal.name;
     els.modalTitle.textContent = animal.name;
-    els.modalImage.src = animal.imageUrl;
     els.modalImage.alt = `${animal.name} large photo`;
-    els.modalImage.referrerPolicy = 'no-referrer';
-    els.modalImage.onerror = () => {
-      if (els.modalImage.dataset.fallback === '1') return;
-      els.modalImage.dataset.fallback = '1';
-      els.modalImage.src = `https://placehold.co/1200x800?text=${encodeURIComponent(animal.name)}`;
-    };
+    setImageWithFallback(els.modalImage, animal.imageUrl, animal.name, 1200, 800);
     els.modalText.innerHTML = animal.description.map(p => `<p>${escapeHtml(p)}</p>`).join('');
 
     if (state.audio) { try { state.audio.pause(); } catch {} }
