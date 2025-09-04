@@ -45,7 +45,7 @@
         },
         {
           "name": "Crow",
-          "imageUrl": "https://placehold.co/800x600?text=Crow",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Carrion_Crow%2C_Corvus_corone.jpg",
           "soundUrl": "https://example.com/sounds/crow.mp3",
           "description": [
             "Crows are among the most intelligent birds, capable of problem-solving and tool use.",
@@ -75,7 +75,7 @@
         },
         {
           "name": "Flamingo",
-          "imageUrl": "https://placehold.co/800x600?text=Flamingo",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Flamingo_DW.jpg",
           "soundUrl": "https://example.com/sounds/flamingo.mp3",
           "description": [
             "Flamingos are recognizable by their pink plumage and elegant, long legs.",
