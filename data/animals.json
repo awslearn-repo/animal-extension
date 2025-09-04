@@ -1,0 +1,340 @@
+{
+  "categories": [
+    {
+      "name": "Birds",
+      "animals": [
+        {
+          "name": "Blue Jay",
+          "imageUrl": "https://placehold.co/800x600?text=Blue+Jay",
+          "soundUrl": "https://example.com/sounds/blue-jay.mp3",
+          "description": [
+            "The Blue Jay is a vibrant songbird known for its striking blue plumage and bold personality.",
+            "These intelligent birds are often found in woodlands and suburban areas, where they communicate with a wide range of calls.",
+            "Blue Jays have a varied diet including seeds, nuts, insects, and occasional fruits."
+          ]
+        },
+        {
+          "name": "Owl",
+          "imageUrl": "https://placehold.co/800x600?text=Owl",
+          "soundUrl": "https://example.com/sounds/owl.mp3",
+          "description": [
+            "Owls are nocturnal raptors famed for their silent flight and keen night vision.",
+            "They inhabit forests, deserts, and tundras across the globe, adapting to diverse ecosystems.",
+            "Owls primarily feed on small mammals, insects, and other birds, using powerful talons to capture prey."
+          ]
+        },
+        {
+          "name": "Parrot",
+          "imageUrl": "https://placehold.co/800x600?text=Parrot",
+          "soundUrl": "https://example.com/sounds/parrot.mp3",
+          "description": [
+            "Parrots are social and highly intelligent birds known for their vivid colors and vocal talents.",
+            "They thrive in tropical and subtropical regions, forming strong bonds within flocks.",
+            "Their diet often includes seeds, nuts, fruit, and nectar."
+          ]
+        },
+        {
+          "name": "Eagle",
+          "imageUrl": "https://placehold.co/800x600?text=Eagle",
+          "soundUrl": "https://example.com/sounds/eagle.mp3",
+          "description": [
+            "Eagles are powerful birds of prey with exceptional vision and commanding presence.",
+            "They build large nests in tall trees or on cliffs and patrol vast territories.",
+            "Fish, small mammals, and carrion are common parts of their diet."
+          ]
+        },
+        {
+          "name": "Crow",
+          "imageUrl": "https://placehold.co/800x600?text=Crow",
+          "soundUrl": "https://example.com/sounds/crow.mp3",
+          "description": [
+            "Crows are among the most intelligent birds, capable of problem-solving and tool use.",
+            "They are highly adaptable and thrive in rural and urban environments alike.",
+            "Omnivorous by nature, crows eat grains, insects, fruit, and small animals."
+          ]
+        },
+        {
+          "name": "Hummingbird",
+          "imageUrl": "https://placehold.co/800x600?text=Hummingbird",
+          "soundUrl": "https://example.com/sounds/hummingbird.mp3",
+          "description": [
+            "Hummingbirds are tiny aerial acrobats known for their rapid wingbeats and hovering flight.",
+            "They often visit flowers for nectar, playing a role in pollination.",
+            "Many species migrate long distances despite their small size."
+          ]
+        },
+        {
+          "name": "Penguin",
+          "imageUrl": "https://placehold.co/800x600?text=Penguin",
+          "soundUrl": "https://example.com/sounds/penguin.mp3",
+          "description": [
+            "Penguins are flightless seabirds superbly adapted for life in the water.",
+            "They inhabit the Southern Hemisphere, with colonies ranging from Antarctica to temperate islands.",
+            "Their streamlined bodies and flippers make them agile swimmers and skilled fish hunters."
+          ]
+        },
+        {
+          "name": "Flamingo",
+          "imageUrl": "https://placehold.co/800x600?text=Flamingo",
+          "soundUrl": "https://example.com/sounds/flamingo.mp3",
+          "description": [
+            "Flamingos are recognizable by their pink plumage and elegant, long legs.",
+            "They feed by filtering small organisms from shallow waters.",
+            "Their color comes from carotenoid pigments in their diet."
+          ]
+        },
+        {
+          "name": "Peacock",
+          "imageUrl": "https://placehold.co/800x600?text=Peacock",
+          "soundUrl": "https://example.com/sounds/peacock.mp3",
+          "description": [
+            "Peacocks are famed for their iridescent tail feathers used in courtship displays.",
+            "They inhabit forests and farmlands, often foraging on the ground.",
+            "Their diet includes seeds, insects, and small reptiles."
+          ]
+        },
+        {
+          "name": "Robin",
+          "imageUrl": "https://placehold.co/800x600?text=Robin",
+          "soundUrl": "https://example.com/sounds/robin.mp3",
+          "description": [
+            "Robins are familiar garden birds known for their bright breast and melodious song.",
+            "They are active foragers, often seen hopping along lawns for insects.",
+            "Robins are territorial, especially during the breeding season."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mammals",
+      "animals": [
+        {
+          "name": "Lion",
+          "imageUrl": "https://placehold.co/800x600?text=Lion",
+          "soundUrl": "https://example.com/sounds/lion.mp3",
+          "description": [
+            "Lions are social big cats that live in prides across African savannas.",
+            "Their cooperative hunting strategies and roaring calls are iconic.",
+            "They are apex predators feeding on antelope, zebra, and other ungulates."
+          ]
+        },
+        {
+          "name": "Tiger",
+          "imageUrl": "https://placehold.co/800x600?text=Tiger",
+          "soundUrl": "https://example.com/sounds/tiger.mp3",
+          "description": [
+            "Tigers are solitary hunters with distinctive stripes and immense strength.",
+            "They inhabit forests and grasslands across parts of Asia.",
+            "Tigers prey on deer, boar, and other large mammals."
+          ]
+        },
+        {
+          "name": "Elephant",
+          "imageUrl": "https://placehold.co/800x600?text=Elephant",
+          "soundUrl": "https://example.com/sounds/elephant.mp3",
+          "description": [
+            "Elephants are the largest land mammals, renowned for intelligence and social bonds.",
+            "They shape ecosystems by dispersing seeds and modifying habitats.",
+            "Their diet consists of grasses, bark, fruit, and foliage."
+          ]
+        },
+        {
+          "name": "Wolf",
+          "imageUrl": "https://placehold.co/800x600?text=Wolf",
+          "soundUrl": "https://example.com/sounds/wolf.mp3",
+          "description": [
+            "Wolves are highly social canids that live and hunt in packs.",
+            "They communicate with howls, body language, and scent marking.",
+            "Their prey includes deer, elk, and small mammals depending on region."
+          ]
+        },
+        {
+          "name": "Bear",
+          "imageUrl": "https://placehold.co/800x600?text=Bear",
+          "soundUrl": "https://example.com/sounds/bear.mp3",
+          "description": [
+            "Bears are omnivorous mammals with diverse diets and habitats.",
+            "Some species hibernate, conserving energy during winter months.",
+            "Berries, insects, fish, and plants can make up much of their diet."
+          ]
+        },
+        {
+          "name": "Kangaroo",
+          "imageUrl": "https://placehold.co/800x600?text=Kangaroo",
+          "soundUrl": "https://example.com/sounds/kangaroo.mp3",
+          "description": [
+            "Kangaroos are marsupials native to Australia, known for powerful hind legs and hopping gait.",
+            "They live in groups called mobs and graze on grasses and shrubs.",
+            "Females carry and nurse joeys in a pouch until they are more developed."
+          ]
+        },
+        {
+          "name": "Dolphin",
+          "imageUrl": "https://placehold.co/800x600?text=Dolphin",
+          "soundUrl": "https://example.com/sounds/dolphin.mp3",
+          "description": [
+            "Dolphins are intelligent marine mammals famous for agility and complex social behavior.",
+            "They communicate using clicks, whistles, and body movements.",
+            "Fish and squid are common prey, often hunted cooperatively."
+          ]
+        },
+        {
+          "name": "Bat",
+          "imageUrl": "https://placehold.co/800x600?text=Bat",
+          "soundUrl": "https://example.com/sounds/bat.mp3",
+          "description": [
+            "Bats are the only mammals capable of sustained flight and play vital ecological roles.",
+            "Many species use echolocation to navigate and find insects in the dark.",
+            "Others feed on fruit and nectar, aiding in pollination and seed dispersal."
+          ]
+        },
+        {
+          "name": "Zebra",
+          "imageUrl": "https://placehold.co/800x600?text=Zebra",
+          "soundUrl": "https://example.com/sounds/zebra.mp3",
+          "description": [
+            "Zebras are equids recognized by their bold black-and-white stripes.",
+            "They roam African grasslands in herds, grazing on tough grasses.",
+            "Stripe patterns may help with camouflage and social recognition."
+          ]
+        },
+        {
+          "name": "Giraffe",
+          "imageUrl": "https://placehold.co/800x600?text=Giraffe",
+          "soundUrl": "https://example.com/sounds/giraffe.mp3",
+          "description": [
+            "Giraffes are the tallest land animals, using long necks to browse treetops.",
+            "They are often seen in small groups moving between acacia trees.",
+            "Leaves and shoots make up most of their diet, especially from thorny trees."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reptiles",
+      "animals": [
+        {
+          "name": "Crocodile",
+          "imageUrl": "https://placehold.co/800x600?text=Crocodile",
+          "soundUrl": "https://example.com/sounds/crocodile.mp3",
+          "description": [
+            "Crocodiles are large, semi-aquatic reptiles with powerful jaws and armored bodies.",
+            "They inhabit rivers, lakes, and wetlands in tropical regions.",
+            "Fish, birds, and mammals are typical prey captured with ambush tactics."
+          ]
+        },
+        {
+          "name": "Snake",
+          "imageUrl": "https://placehold.co/800x600?text=Snake",
+          "soundUrl": "https://example.com/sounds/snake.mp3",
+          "description": [
+            "Snakes are limbless reptiles that have evolved incredible diversity in form and habitat.",
+            "They range from harmless insect-eaters to powerful constrictors and venomous species.",
+            "Diet varies widely but often includes rodents, birds, and amphibians."
+          ]
+        },
+        {
+          "name": "Lizard",
+          "imageUrl": "https://placehold.co/800x600?text=Lizard",
+          "soundUrl": "https://example.com/sounds/lizard.mp3",
+          "description": [
+            "Lizards are a diverse group of reptiles found in deserts, forests, and urban areas.",
+            "Many species can detach their tails to escape predators.",
+            "Insects, plants, and smaller animals make up their varied diets."
+          ]
+        },
+        {
+          "name": "Turtle",
+          "imageUrl": "https://placehold.co/800x600?text=Turtle",
+          "soundUrl": "https://example.com/sounds/turtle.mp3",
+          "description": [
+            "Turtles are reptiles with protective shells that have persisted for millions of years.",
+            "They occupy marine, freshwater, and terrestrial habitats.",
+            "Diet ranges from aquatic vegetation to invertebrates and jellyfish."
+          ]
+        },
+        {
+          "name": "Chameleon",
+          "imageUrl": "https://placehold.co/800x600?text=Chameleon",
+          "soundUrl": "https://example.com/sounds/chameleon.mp3",
+          "description": [
+            "Chameleons are known for color change, zygodactyl feet, and long projectile tongues.",
+            "They are ambush predators, often blending into foliage to catch insects.",
+            "Many species are arboreal, living high in trees and shrubs."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Amphibians",
+      "animals": [
+        {
+          "name": "Frog",
+          "imageUrl": "https://placehold.co/800x600?text=Frog",
+          "soundUrl": "https://example.com/sounds/frog.mp3",
+          "description": [
+            "Frogs are amphibians with permeable skin and a life cycle that often includes metamorphosis.",
+            "They inhabit ponds, forests, and grasslands, especially near water.",
+            "Many species are important bioindicators of ecosystem health."
+          ]
+        },
+        {
+          "name": "Salamander",
+          "imageUrl": "https://placehold.co/800x600?text=Salamander",
+          "soundUrl": "https://example.com/sounds/salamander.mp3",
+          "description": [
+            "Salamanders are slender amphibians, often secretive and active at night.",
+            "They prefer moist habitats under logs, leaf litter, or near streams.",
+            "Diet consists of insects, worms, and other small invertebrates."
+          ]
+        },
+        {
+          "name": "Newt",
+          "imageUrl": "https://placehold.co/800x600?text=Newt",
+          "soundUrl": "https://example.com/sounds/newt.mp3",
+          "description": [
+            "Newts are amphibians that often split time between aquatic and terrestrial environments.",
+            "They have smooth, moist skin and many species can regenerate lost limbs.",
+            "Small invertebrates and tadpoles are common prey."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Insects",
+      "animals": [
+        {
+          "name": "Butterfly",
+          "imageUrl": "https://placehold.co/800x600?text=Butterfly",
+          "soundUrl": "https://example.com/sounds/butterfly.mp3",
+          "description": [
+            "Butterflies are colorful insects that undergo complete metamorphosis from caterpillar to adult.",
+            "They are important pollinators and indicators of biodiversity.",
+            "Adults feed on nectar while caterpillars eat host plant leaves."
+          ]
+        },
+        {
+          "name": "Bee",
+          "imageUrl": "https://placehold.co/800x600?text=Bee",
+          "soundUrl": "https://example.com/sounds/bee.mp3",
+          "description": [
+            "Bees are essential pollinators with complex social structures in many species.",
+            "They communicate using dances and scents to share foraging information.",
+            "Nectar and pollen are primary food sources for bees and their larvae."
+          ]
+        },
+        {
+          "name": "Ladybug",
+          "imageUrl": "https://placehold.co/800x600?text=Ladybug",
+          "soundUrl": "https://example.com/sounds/ladybug.mp3",
+          "description": [
+            "Ladybugs are small beetles celebrated for controlling garden pests like aphids.",
+            "Their bright coloration often warns predators of unpalatability.",
+            "They overwinter in groups and emerge in spring to feed and breed."
+          ]
+        }
+      ]
+    }
+  ]
+}
+
