@@ -4,8 +4,10 @@
   "version": "1.0.0",
   "description": "3D animal sphere with details and sounds in the popup.",
   "action": {
-    "default_title": "Animal Sounds & Facts",
-    "default_popup": "popup.html"
+    "default_title": "Animal Sounds & Facts"
+  },
+  "background": {
+    "service_worker": "background.js"
   },
   "permissions": [],
   "host_permissions": [
