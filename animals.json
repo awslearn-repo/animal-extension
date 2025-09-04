@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Blue Jay",
+    "category": "Birds",
+    "image": "images/blue_jay.svg",
+    "sound": "sounds/blue_jay.mp3",
+    "description": [
+      "Habitat: Blue jays inhabit deciduous and mixed forests, parks, and suburbs across eastern North America, nesting in trees and foraging from canopy to ground.",
+      "Diet: Omnivorous; they eat acorns, seeds, nuts, insects, and occasionally small vertebrates or eggs. They are known for caching acorns for later.",
+      "Behavior: Highly vocal and intelligent, blue jays mimic hawk calls, live in loose family groups, and display assertive territorial behavior at feeders.",
+      "Fun facts: Their striking blue color is structural, created by light scattering off feather microstructures rather than blue pigment."
+    ]
+  },
+  {
+    "name": "Owl",
+    "category": "Birds",
+    "image": "images/owl.svg",
+    "sound": "sounds/owl.mp3",
+    "description": [
+      "Habitat: Owls occupy diverse habitats worldwide, from boreal forests and deserts to cities, often roosting in cavities or dense foliage.",
+      "Diet: Predominantly carnivorous; they hunt rodents, small birds, and insects using acute hearing and silent flight.",
+      "Behavior: Mostly nocturnal ambush predators with forward-facing eyes and flexible necks that allow up to 270° head rotation.",
+      "Fun facts: Specialized feathers reduce turbulence for near-silent flight, enabling stealthy approaches to prey."
+    ]
+  },
+  {
+    "name": "Tiger",
+    "category": "Mammals",
+    "image": "images/tiger.svg",
+    "sound": "sounds/tiger.mp3",
+    "description": [
+      "Habitat: Tigers range across forests, mangroves, and grasslands in Asia, requiring large territories with cover and water.",
+      "Diet: Obligate carnivores; their prey includes deer, boar, and other ungulates, taken through solitary stalk-and-ambush hunting.",
+      "Behavior: Territorial and largely solitary, tigers patrol scent-marked ranges and are strong swimmers that readily cross rivers.",
+      "Fun facts: A tiger's stripe pattern is unique to each individual, much like a human fingerprint."
+    ]
+  },
+  {
+    "name": "Elephant",
+    "category": "Mammals",
+    "image": "images/elephant.svg",
+    "sound": "sounds/elephant.mp3",
+    "description": [
+      "Habitat: Elephants inhabit savannas, forests, and marshes in Africa and Asia, migrating seasonally to track water and forage.",
+      "Diet: Herbivores; they consume grasses, leaves, bark, and fruit, spending many hours per day feeding to sustain their size.",
+      "Behavior: Highly social and matriarchal, elephants communicate with vocalizations and low-frequency rumbles that can travel long distances.",
+      "Fun facts: Their trunks contain tens of thousands of muscles, enabling delicate manipulation and powerful lifting alike."
+    ]
+  }
+]
+
