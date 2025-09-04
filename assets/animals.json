@@ -240,6 +240,146 @@
         "Beneficial beetles that eat aphids; bright colors warn predators.",
         "Common in gardens, fields, and forests worldwide."
       ]
+    },
+    {
+      "id": "bear",
+      "name": "Bear",
+      "category": "mammals",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Ursus_arctos_-_Norway.jpg",
+      "description": [
+        "Omnivorous mammals with varied diets and habitats.",
+        "Some species hibernate during winter months."
+      ]
+    },
+    {
+      "id": "kangaroo",
+      "name": "Kangaroo",
+      "category": "mammals",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Kangaroo_Australia_01_11_2008_-_retouch.JPG",
+      "description": [
+        "Marsupials native to Australia with powerful hind legs.",
+        "Females carry joeys in a pouch until developed."
+      ]
+    },
+    {
+      "id": "dolphin",
+      "name": "Dolphin",
+      "category": "mammals",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Tursiops_truncatus_01.jpg",
+      "description": [
+        "Intelligent marine mammals with complex social behavior.",
+        "Communicate using clicks and whistles."
+      ]
+    },
+    {
+      "id": "zebra",
+      "name": "Zebra",
+      "category": "mammals",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Plains_Zebra_Equus_quagga.jpg",
+      "description": [
+        "Equids recognized by bold black-and-white stripes.",
+        "Graze on tough grasses in African herds."
+      ]
+    },
+    {
+      "id": "giraffe",
+      "name": "Giraffe",
+      "category": "mammals",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Giraffa_camelopardalis_reticulata.jpg",
+      "description": [
+        "Tallest land animals; browse treetops with long necks.",
+        "Often seen in small groups near acacias."
+      ]
+    },
+    {
+      "id": "bat",
+      "name": "Bat",
+      "category": "mammals",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Lesser_short-nosed_fruit_bat_Cynopterus_brachyotis.jpg",
+      "description": [
+        "Only mammals capable of sustained flight; vital ecological roles.",
+        "Many species use echolocation to navigate in the dark."
+      ]
+    },
+    {
+      "id": "parrot",
+      "name": "Parrot",
+      "category": "birds",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Ara_ararauna_Luc_Viatour.jpg",
+      "description": [
+        "Social, intelligent birds known for vivid colors and vocal talents.",
+        "Common in tropical and subtropical regions."
+      ]
+    },
+    {
+      "id": "crow",
+      "name": "Crow",
+      "category": "birds",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Carrion_Crow%2C_Corvus_corone.jpg",
+      "description": [
+        "Highly intelligent birds capable of problem-solving and tool use.",
+        "Adaptable to rural and urban environments."
+      ]
+    },
+    {
+      "id": "hummingbird",
+      "name": "Hummingbird",
+      "category": "birds",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Ruby-throated_Hummingbird.jpg",
+      "description": [
+        "Tiny aerial acrobats with rapid wingbeats and hovering flight.",
+        "Often visit flowers for nectar and aid pollination."
+      ]
+    },
+    {
+      "id": "penguin",
+      "name": "Penguin",
+      "category": "birds",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Emperor_Penguin_Manchot_empereur.jpg",
+      "description": [
+        "Flightless seabirds adapted for life in the water.",
+        "Agile swimmers and skilled fish hunters."
+      ]
+    },
+    {
+      "id": "flamingo",
+      "name": "Flamingo",
+      "category": "birds",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Flamingo_DW.jpg",
+      "description": [
+        "Recognizable by pink plumage and long legs; filter feeders.",
+        "Color comes from carotenoid pigments in their diet."
+      ]
+    },
+    {
+      "id": "peacock",
+      "name": "Peacock",
+      "category": "birds",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Peacock_Plumage.jpg",
+      "description": [
+        "Famed for iridescent tail feathers used in courtship displays.",
+        "Often forage on the ground in forests and farmlands."
+      ]
+    },
+    {
+      "id": "robin",
+      "name": "Robin",
+      "category": "birds",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/83/American_Robin.jpg",
+      "description": [
+        "Familiar garden birds with bright breasts and melodious songs.",
+        "Active foragers often seen hopping for insects."
+      ]
+    },
+    {
+      "id": "lizard",
+      "name": "Lizard",
+      "category": "reptiles",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Green_iguana.jpg",
+      "description": [
+        "Diverse reptiles found in deserts, forests, and urban areas.",
+        "Some species can detach their tails to escape predators."
+      ]
     }
   ]
 }
