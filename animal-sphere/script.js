@@ -13,6 +13,7 @@
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
   container.appendChild(renderer.domElement);
+  renderer.sortObjects = true;
 
   const ambient = new THREE.AmbientLight(0xffffff, 0.9);
   scene.add(ambient);
@@ -43,6 +44,9 @@
 
   function createSprites(data){
     const loader = new THREE.TextureLoader();
+    if (typeof loader.setCrossOrigin === "function"){
+      loader.setCrossOrigin("anonymous");
+    }
     const goldSpiral = (i, n) => {
       const phi = Math.acos(1 - 2 * (i + 0.5) / n);
       const theta = Math.PI * (1 + Math.sqrt(5)) * (i + 0.5);
@@ -51,7 +55,7 @@
     sprites = data.map((animal, i) => {
       const tex = loader.load(animal.image, undefined, undefined, () => {});
       tex.colorSpace = THREE.SRGBColorSpace;
-      const mat = new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: true });
+      const mat = new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false });
       const sp = new THREE.Sprite(mat);
       sp.scale.set(spriteSize, spriteSize, 1);
       const { phi, theta } = goldSpiral(i, data.length);
@@ -72,6 +76,85 @@
     renderer.render(scene, camera);
   }
   animate();
+
+  // Drag controls for rotating the globe
+  const drag = { active: false, startX: 0, startY: 0, prevX: 0, prevY: 0, moved: false };
+  const rotateSpeed = 0.0055;
+  const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+
+  const onPointerDown = (e) => {
+    drag.active = true;
+    drag.moved = false;
+    drag.startX = e.clientX;
+    drag.startY = e.clientY;
+    drag.prevX = e.clientX;
+    drag.prevY = e.clientY;
+    autoRotate = 0; // pause autorotate while dragging
+  };
+  const onPointerMove = (e) => {
+    if (!drag.active) return;
+    const dx = e.clientX - drag.prevX;
+    const dy = e.clientY - drag.prevY;
+    if (Math.abs(e.clientX - drag.startX) > 2 || Math.abs(e.clientY - drag.startY) > 2){
+      drag.moved = true;
+    }
+    globe.rotation.y += dx * rotateSpeed;
+    globe.rotation.x = clamp(globe.rotation.x + dy * rotateSpeed, -Math.PI * 0.48, Math.PI * 0.48);
+    drag.prevX = e.clientX;
+    drag.prevY = e.clientY;
+  };
+  const onPointerUp = () => {
+    drag.active = false;
+    autoRotate = 0.0035; // resume gentle autorotate
+  };
+  renderer.domElement.addEventListener("pointerdown", onPointerDown);
+  window.addEventListener("pointermove", onPointerMove);
+  window.addEventListener("pointerup", onPointerUp);
+
+  // Keyboard rotation controls
+  window.addEventListener("keydown", (e) => {
+    const step = 0.12;
+    if (e.key === "ArrowLeft") { globe.rotation.y -= step; autoRotate = 0.0018; }
+    if (e.key === "ArrowRight") { globe.rotation.y += step; autoRotate = 0.0018; }
+    if (e.key === "ArrowUp") { globe.rotation.x = clamp(globe.rotation.x - step, -Math.PI * 0.48, Math.PI * 0.48); autoRotate = 0.0018; }
+    if (e.key === "ArrowDown") { globe.rotation.x = clamp(globe.rotation.x + step, -Math.PI * 0.48, Math.PI * 0.48); autoRotate = 0.0018; }
+  });
+
+  // Zoom controls (wheel) and touch pinch zoom
+  const minZ = 13;
+  const maxZ = 28;
+  const applyZoom = (delta) => {
+    camera.position.z = clamp(camera.position.z + delta, minZ, maxZ);
+  };
+  renderer.domElement.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? 1 : -1;
+    applyZoom(delta);
+  }, { passive: false });
+
+  let pinchState = { active: false, startDist: 0, startZ: camera.position.z };
+  const getTouchDist = (t0, t1) => {
+    const dx = t0.clientX - t1.clientX;
+    const dy = t0.clientY - t1.clientY;
+    return Math.hypot(dx, dy);
+  };
+  renderer.domElement.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 2){
+      pinchState.active = true;
+      pinchState.startDist = getTouchDist(e.touches[0], e.touches[1]);
+      pinchState.startZ = camera.position.z;
+    }
+  }, { passive: true });
+  renderer.domElement.addEventListener("touchmove", (e) => {
+    if (pinchState.active && e.touches.length === 2){
+      const dist = getTouchDist(e.touches[0], e.touches[1]);
+      const scale = pinchState.startDist / Math.max(1, dist);
+      camera.position.z = clamp(pinchState.startZ * scale, minZ, maxZ);
+    }
+  }, { passive: true });
+  renderer.domElement.addEventListener("touchend", () => {
+    pinchState.active = false;
+  });
 
   // Interactions
   window.addEventListener("mousemove", (e) => {
@@ -101,6 +184,7 @@
   });
 
   window.addEventListener("click", () => {
+    if (drag.moved) { return; }
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(globe.children, true);
     if (intersects.length > 0){
