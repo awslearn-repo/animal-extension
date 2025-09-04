@@ -135,13 +135,31 @@
       const firstAnimal = category.animals[0];
       const figure = document.createElement('article');
       figure.className = 'card';
-      figure.innerHTML = `
-        <div class="card-media">
-          <img src="${escapeHtml(firstAnimal.imageUrl)}" alt="${escapeHtml(category.name)} cover" loading="lazy" referrerpolicy="no-referrer" onerror="if(!this.dataset.fallback){this.dataset.fallback='1'; this.src='https://placehold.co/800x600?text=${encodeURIComponent(category.name)}';}">
-        </div>
-        <div class="chip">${category.animals.length} animals</div>
-        <div class="card-title">${escapeHtml(category.name)}</div>
-      `;
+      const media = document.createElement('div');
+      media.className = 'card-media';
+      const img = document.createElement('img');
+      img.src = firstAnimal.imageUrl;
+      img.alt = `${category.name} cover`;
+      img.loading = 'lazy';
+      img.referrerPolicy = 'no-referrer';
+      img.onerror = () => {
+        if (img.dataset.fallback === '1') return;
+        img.dataset.fallback = '1';
+        img.src = `https://placehold.co/800x600?text=${encodeURIComponent(category.name)}`;
+      };
+      media.appendChild(img);
+
+      const chip = document.createElement('div');
+      chip.className = 'chip';
+      chip.textContent = `${category.animals.length} animals`;
+
+      const title = document.createElement('div');
+      title.className = 'card-title';
+      title.textContent = category.name;
+
+      figure.appendChild(media);
+      figure.appendChild(chip);
+      figure.appendChild(title);
       figure.addEventListener('click', () => navigate(`#/category/${encodeURIComponent(category.name)}`));
       els.grid.appendChild(figure);
     });
@@ -158,12 +176,26 @@
       const card = document.createElement('article');
       card.className = 'card';
       card.setAttribute('tabindex', '0');
-      card.innerHTML = `
-        <div class="card-media">
-          <img src="${escapeHtml(animal.imageUrl)}" alt="${escapeHtml(animal.name)}" loading="lazy" referrerpolicy="no-referrer" onerror="if(!this.dataset.fallback){this.dataset.fallback='1'; this.src='https://placehold.co/800x600?text=${encodeURIComponent(animal.name)}';}">
-        </div>
-        <div class="card-title">${escapeHtml(animal.name)}</div>
-      `;
+      const media = document.createElement('div');
+      media.className = 'card-media';
+      const img = document.createElement('img');
+      img.src = animal.imageUrl;
+      img.alt = animal.name;
+      img.loading = 'lazy';
+      img.referrerPolicy = 'no-referrer';
+      img.onerror = () => {
+        if (img.dataset.fallback === '1') return;
+        img.dataset.fallback = '1';
+        img.src = `https://placehold.co/800x600?text=${encodeURIComponent(animal.name)}`;
+      };
+      media.appendChild(img);
+
+      const title = document.createElement('div');
+      title.className = 'card-title';
+      title.textContent = animal.name;
+
+      card.appendChild(media);
+      card.appendChild(title);
       const open = () => navigate(`#/animal/${encodeURIComponent(category.name)}/${encodeURIComponent(animal.name)}`);
       card.addEventListener('click', open);
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
