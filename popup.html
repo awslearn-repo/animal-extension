@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animal Sounds &amp; Facts</title>
+  <link rel="stylesheet" href="popup.css">
+  <style>
+    /* Prevent FOUC while JS renders */
+    body { visibility: hidden; }
+  </style>
+  <script defer src="popup.js"></script>
+  <script>
+    // Show body after JS kicks in
+    document.addEventListener('DOMContentLoaded', () => { document.body.style.visibility = 'visible'; });
+  </script>
+  </head>
+<body>
+  <div id="app" class="app">
+    <header class="header">
+      <button id="backButton" class="back-button" aria-label="Go back" hidden>← Back</button>
+      <h1 class="title">Animal Sounds &amp; Facts</h1>
+    </header>
+    <main id="content" class="content" role="main" aria-live="polite"></main>
+    <footer class="footer">
+      <span class="hint">Tap a category to explore.</span>
+    </footer>
+  </div>
+</body>
+</html>
+

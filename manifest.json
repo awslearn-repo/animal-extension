@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Animal Sounds & Facts",
+  "version": "1.0.0",
+  "description": "Explore animal categories, hear sounds, and read facts in a clean popup.",
+  "action": {
+    "default_title": "Animal Sounds & Facts",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/elephant.svg",
+    "32": "images/elephant.svg",
+    "48": "images/elephant.svg",
+    "128": "images/elephant.svg"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*",
+        "sounds/*",
+        "animals.json"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
+
