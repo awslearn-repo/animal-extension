@@ -5,7 +5,7 @@
       "animals": [
         {
           "name": "Blue Jay",
-          "imageUrl": "https://placehold.co/800x600?text=Blue+Jay",
+          "imageUrl": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR64uqTayxH-cwSdZNY21Y2k_HFUAVN1WvLwAKd3IpRDmfowfpx6gOWlhdgcPhAUfo8JZ2coNjZ8mYwaipd1owC_CZaR05FUNiqX43nu0XAkw",
           "soundUrl": "https://example.com/sounds/blue-jay.mp3",
           "description": [
             "The Blue Jay is a vibrant songbird known for its striking blue plumage and bold personality.",
@@ -15,7 +15,7 @@
         },
         {
           "name": "Owl",
-          "imageUrl": "https://placehold.co/800x600?text=Owl",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Spotted_Owlet_%28Athene_bragata%29_Photograph_By_Shantanu_Kuveskar.jpg",
           "soundUrl": "https://example.com/sounds/owl.mp3",
           "description": [
             "Owls are nocturnal raptors famed for their silent flight and keen night vision.",
@@ -35,7 +35,7 @@
         },
         {
           "name": "Eagle",
-          "imageUrl": "https://placehold.co/800x600?text=Eagle",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Bald_Eagle_Portrait.jpg",
           "soundUrl": "https://example.com/sounds/eagle.mp3",
           "description": [
             "Eagles are powerful birds of prey with exceptional vision and commanding presence.",
@@ -110,7 +110,7 @@
       "animals": [
         {
           "name": "Lion",
-          "imageUrl": "https://placehold.co/800x600?text=Lion",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg",
           "soundUrl": "https://example.com/sounds/lion.mp3",
           "description": [
             "Lions are social big cats that live in prides across African savannas.",
@@ -120,7 +120,7 @@
         },
         {
           "name": "Tiger",
-          "imageUrl": "https://placehold.co/800x600?text=Tiger",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg",
           "soundUrl": "https://example.com/sounds/tiger.mp3",
           "description": [
             "Tigers are solitary hunters with distinctive stripes and immense strength.",
@@ -130,7 +130,7 @@
         },
         {
           "name": "Elephant",
-          "imageUrl": "https://placehold.co/800x600?text=Elephant",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg",
           "soundUrl": "https://example.com/sounds/elephant.mp3",
           "description": [
             "Elephants are the largest land mammals, renowned for intelligence and social bonds.",
@@ -140,7 +140,7 @@
         },
         {
           "name": "Wolf",
-          "imageUrl": "https://placehold.co/800x600?text=Wolf",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Canis_lupus_laying.jpg",
           "soundUrl": "https://example.com/sounds/wolf.mp3",
           "description": [
             "Wolves are highly social canids that live and hunt in packs.",
@@ -150,7 +150,7 @@
         },
         {
           "name": "Bear",
-          "imageUrl": "https://placehold.co/800x600?text=Bear",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Ursus_arctos_-_Norway.jpg",
           "soundUrl": "https://example.com/sounds/bear.mp3",
           "description": [
             "Bears are omnivorous mammals with diverse diets and habitats.",
@@ -160,7 +160,7 @@
         },
         {
           "name": "Kangaroo",
-          "imageUrl": "https://placehold.co/800x600?text=Kangaroo",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Kangaroo_Australia_01_11_2008_-_retouch.JPG",
           "soundUrl": "https://example.com/sounds/kangaroo.mp3",
           "description": [
             "Kangaroos are marsupials native to Australia, known for powerful hind legs and hopping gait.",
@@ -170,7 +170,7 @@
         },
         {
           "name": "Dolphin",
-          "imageUrl": "https://placehold.co/800x600?text=Dolphin",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Tursiops_truncatus_01.jpg",
           "soundUrl": "https://example.com/sounds/dolphin.mp3",
           "description": [
             "Dolphins are intelligent marine mammals famous for agility and complex social behavior.",
@@ -180,7 +180,7 @@
         },
         {
           "name": "Bat",
-          "imageUrl": "https://placehold.co/800x600?text=Bat",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Lesser_short-nosed_fruit_bat_Cynopterus_brachyotis.jpg",
           "soundUrl": "https://example.com/sounds/bat.mp3",
           "description": [
             "Bats are the only mammals capable of sustained flight and play vital ecological roles.",
@@ -190,7 +190,7 @@
         },
         {
           "name": "Zebra",
-          "imageUrl": "https://placehold.co/800x600?text=Zebra",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Plains_Zebra_Equus_quagga.jpg",
           "soundUrl": "https://example.com/sounds/zebra.mp3",
           "description": [
             "Zebras are equids recognized by their bold black-and-white stripes.",
@@ -200,7 +200,7 @@
         },
         {
           "name": "Giraffe",
-          "imageUrl": "https://placehold.co/800x600?text=Giraffe",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Giraffa_camelopardalis_reticulata.jpg",
           "soundUrl": "https://example.com/sounds/giraffe.mp3",
           "description": [
             "Giraffes are the tallest land animals, using long necks to browse treetops.",
@@ -215,7 +215,7 @@
       "animals": [
         {
           "name": "Crocodile",
-          "imageUrl": "https://placehold.co/800x600?text=Crocodile",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/NileCrocodile.jpg",
           "soundUrl": "https://example.com/sounds/crocodile.mp3",
           "description": [
             "Crocodiles are large, semi-aquatic reptiles with powerful jaws and armored bodies.",
@@ -225,7 +225,7 @@
         },
         {
           "name": "Snake",
-          "imageUrl": "https://placehold.co/800x600?text=Snake",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Green_Tree_Python_%28Morelia_viridis%29_%28231866820%29.jpg",
           "soundUrl": "https://example.com/sounds/snake.mp3",
           "description": [
             "Snakes are limbless reptiles that have evolved incredible diversity in form and habitat.",
@@ -245,7 +245,7 @@
         },
         {
           "name": "Turtle",
-          "imageUrl": "https://placehold.co/800x600?text=Turtle",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Green_turtle_swimming_over_seagrass_meadow_in_Kona.jpg",
           "soundUrl": "https://example.com/sounds/turtle.mp3",
           "description": [
             "Turtles are reptiles with protective shells that have persisted for millions of years.",
@@ -255,7 +255,7 @@
         },
         {
           "name": "Chameleon",
-          "imageUrl": "https://placehold.co/800x600?text=Chameleon",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Chamaeleo_calyptratus.jpg",
           "soundUrl": "https://example.com/sounds/chameleon.mp3",
           "description": [
             "Chameleons are known for color change, zygodactyl feet, and long projectile tongues.",
@@ -270,7 +270,7 @@
       "animals": [
         {
           "name": "Frog",
-          "imageUrl": "https://placehold.co/800x600?text=Frog",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Green_frog.jpg",
           "soundUrl": "https://example.com/sounds/frog.mp3",
           "description": [
             "Frogs are amphibians with permeable skin and a life cycle that often includes metamorphosis.",
@@ -280,7 +280,7 @@
         },
         {
           "name": "Salamander",
-          "imageUrl": "https://placehold.co/800x600?text=Salamander",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Salamandra_salamandra_Luc_Viatour.jpg",
           "soundUrl": "https://example.com/sounds/salamander.mp3",
           "description": [
             "Salamanders are slender amphibians, often secretive and active at night.",
@@ -290,7 +290,7 @@
         },
         {
           "name": "Newt",
-          "imageUrl": "https://placehold.co/800x600?text=Newt",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Ichthyosaura_alpestris_MHNT.jpg",
           "soundUrl": "https://example.com/sounds/newt.mp3",
           "description": [
             "Newts are amphibians that often split time between aquatic and terrestrial environments.",
@@ -305,7 +305,7 @@
       "animals": [
         {
           "name": "Butterfly",
-          "imageUrl": "https://placehold.co/800x600?text=Butterfly",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Monarch_Butterfly_Danaus_plexippus_Male_2664.jpg",
           "soundUrl": "https://example.com/sounds/butterfly.mp3",
           "description": [
             "Butterflies are colorful insects that undergo complete metamorphosis from caterpillar to adult.",
@@ -315,7 +315,7 @@
         },
         {
           "name": "Bee",
-          "imageUrl": "https://placehold.co/800x600?text=Bee",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Bee_on_flower.jpg",
           "soundUrl": "https://example.com/sounds/bee.mp3",
           "description": [
             "Bees are essential pollinators with complex social structures in many species.",
@@ -325,7 +325,7 @@
         },
         {
           "name": "Ladybug",
-          "imageUrl": "https://placehold.co/800x600?text=Ladybug",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Coccinella_septempunctata_LC0202.jpg",
           "soundUrl": "https://example.com/sounds/ladybug.mp3",
           "description": [
             "Ladybugs are small beetles celebrated for controlling garden pests like aphids.",
