@@ -3,23 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Animal Sounds &amp; Facts</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>3D Animal Sphere</title>
+    <link rel="stylesheet" href="sphere.css" />
   </head>
   <body>
-    <header class="header">
-      <button id="backButton" class="back-button" aria-label="Back" hidden>← Back</button>
-      <h1 class="title">Animal Sounds &amp; Facts</h1>
-    </header>
-    <main id="content" class="content" role="main" aria-live="polite"></main>
-
-    <template id="cardTemplate">
-      <div class="card" tabindex="0" role="button" aria-pressed="false">
-        <img class="card-image" alt="" />
-        <div class="card-label"></div>
+    <div id="scene" aria-label="3D animal sphere"></div>
+    <aside id="detailPanel" aria-live="polite" aria-hidden="true">
+      <button id="closePanel" aria-label="Close details">×</button>
+      <div class="media">
+        <img id="detailImage" alt="Selected animal" />
+        <button id="playSound" aria-label="Play animal sound">Play Sound</button>
       </div>
-    </template>
+      <div class="content">
+        <h2 id="detailTitle"></h2>
+        <div id="detailText"></div>
+      </div>
+    </aside>
+    <div id="overlay" aria-hidden="true"></div>
 
-    <script src="popup.js" defer></script>
+    <script src="vendor/three.min.js" defer></script>
+    <script src="sphere.js" defer></script>
   </body>
   </html>
