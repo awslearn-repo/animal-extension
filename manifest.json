@@ -1,7 +1,10 @@
 {
   "name": "Animal Explorer",
   "short_name": "Animals",
+  "description": "Explore animals with images, sounds, and categories.",
+  "id": ".",
   "start_url": ".",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#0b1220",
   "theme_color": "#4e9cff",
