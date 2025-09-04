@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Animated Animal Atlas</title>
+    <meta name="color-scheme" content="dark light" />
+    <meta name="description" content="A highly-animated gallery of animals with images and sounds, organized by category." />
+    <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
+    <link rel="dns-prefetch" href="https://upload.wikimedia.org">
+    <link rel="preconnect" href="https://cdn.pixabay.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.pixabay.com">
+    <link rel="stylesheet" href="assets/style.css" />
+    <script defer src="assets/app.js"></script>
+  </head>
+  <body>
+    <div class="bg fx-gradient"></div>
+    <header class="app-header">
+      <div class="branding">
+        <h1 class="title">Animated Animal Atlas</h1>
+        <p class="tagline">Explore beautiful animations, images, and sounds</p>
+      </div>
+      <div class="controls">
+        <button id="muteToggle" class="btn" aria-pressed="false" aria-label="Toggle sound">🔊 Sound On</button>
+      </div>
+    </header>
+
+    <section class="categories" aria-label="Animal categories">
+      <nav id="categoryBar" class="category-bar" aria-label="Categories"></nav>
+    </section>
+
+    <main class="content" role="main">
+      <div id="status" class="status" aria-live="polite">Loading animals…</div>
+      <div id="grid" class="grid" aria-live="off"></div>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card" tabindex="0">
+        <div class="media">
+          <img class="thumb" alt="" loading="lazy" decoding="async" />
+          <button class="play" type="button" aria-label="Play sound">▶</button>
+        </div>
+        <div class="meta">
+          <h3 class="name"></h3>
+          <span class="pill"></span>
+        </div>
+      </article>
+    </template>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+      <div class="modal__dialog" role="document">
+        <button id="modalClose" class="modal__close" aria-label="Close">×</button>
+        <div class="modal__hero">
+          <img id="modalImage" alt="" />
+          <div class="modal__heroText">
+            <h2 id="modalTitle"></h2>
+            <p class="modal__category"></p>
+            <button id="modalPlay" class="btn">Play Sound</button>
+          </div>
+        </div>
+        <div id="modalBody" class="modal__body"></div>
+      </div>
+    </div>
+
+    <noscript>
+      This site requires JavaScript to display animations and sounds.
+    </noscript>
+  </body>
+  </html>
+

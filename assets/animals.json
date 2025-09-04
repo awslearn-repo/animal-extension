@@ -1,0 +1,246 @@
+{
+  "categories": [
+    { "id": "all", "name": "All" },
+    { "id": "birds", "name": "Birds" },
+    { "id": "mammals", "name": "Mammals" },
+    { "id": "reptiles", "name": "Reptiles" },
+    { "id": "amphibians", "name": "Amphibians" },
+    { "id": "fish", "name": "Fish" },
+    { "id": "insects", "name": "Insects" }
+  ],
+  "animals": [
+    {
+      "id": "blue-jay",
+      "name": "Blue Jay",
+      "category": "birds",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Cyanocitta-cristata-004.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2022/03/15/audio_8a1db1b3ff.mp3",
+      "description": [
+        "Vibrant songbird native to North America, noted for bold crests and blue plumage.",
+        "Omnivorous diet of acorns, seeds, and insects; known for caching food.",
+        "Intelligent and social; can mimic hawk calls."
+      ]
+    },
+    {
+      "id": "owl",
+      "name": "Owl",
+      "category": "birds",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Spotted_Owlet_%28Athene_bragata%29_Photograph_By_Shantanu_Kuveskar.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/08/08/audio_6a2e3a5d02.mp3",
+      "description": [
+        "Nocturnal raptors with silent flight and exceptional hearing.",
+        "Hunt small mammals and insects; forward-facing eyes aid depth perception."
+      ]
+    },
+    {
+      "id": "eagle",
+      "name": "Eagle",
+      "category": "birds",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Bald_Eagle_Portrait.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/09/02/audio_7f3f2ef1b5.mp3",
+      "description": [
+        "Large birds of prey with powerful talons and keen eyesight.",
+        "Often nest on cliffs or tall trees; diet includes fish and small mammals."
+      ]
+    },
+    {
+      "id": "lion",
+      "name": "Lion",
+      "category": "mammals",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2022/03/15/audio_2f5d7b8c3c.mp3",
+      "description": [
+        "Social big cats living in prides; iconic roars travel kilometers.",
+        "Hunt ungulates like zebra and wildebeest on African savannas."
+      ]
+    },
+    {
+      "id": "tiger",
+      "name": "Tiger",
+      "category": "mammals",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/09/20/audio_5c6b8d2e3a.mp3",
+      "description": [
+        "Solitary apex predators of Asian forests and grasslands.",
+        "Striped coats provide camouflage; powerful swimmers."
+      ]
+    },
+    {
+      "id": "elephant",
+      "name": "Elephant",
+      "category": "mammals",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2022/03/15/audio_7a5c6f2e1b.mp3",
+      "description": [
+        "Largest land mammals; complex social structures and long lifespans.",
+        "Use infrasonic rumbles to communicate over distance."
+      ]
+    },
+    {
+      "id": "wolf",
+      "name": "Wolf",
+      "category": "mammals",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Canis_lupus_laying.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/12/20/audio_9f3a2b7c6d.mp3",
+      "description": [
+        "Pack-living canids known for howling and cooperative hunting.",
+        "Inhabit forests, tundra, and mountains across the Northern Hemisphere."
+      ]
+    },
+    {
+      "id": "crocodile",
+      "name": "Crocodile",
+      "category": "reptiles",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/NileCrocodile.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/11/01/audio_4a5b6c7d8e.mp3",
+      "description": [
+        "Ambush predators of tropical rivers and wetlands; powerful jaws.",
+        "Feed on fish, birds, and mammals near water."
+      ]
+    },
+    {
+      "id": "snake",
+      "name": "Snake",
+      "category": "reptiles",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/25/Green_Tree_Python_%28Morelia_viridis%29_%28231866820%29.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/09/17/audio_5a6b7c8d9e.mp3",
+      "description": [
+        "Limbless reptiles with flexible jaws; occupy diverse habitats.",
+        "Diet varies widely from rodents to birds and amphibians."
+      ]
+    },
+    {
+      "id": "turtle",
+      "name": "Turtle",
+      "category": "reptiles",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Green_turtle_swimming_over_seagrass_meadow_in_Kona.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2022/03/15/audio_7b8c9d0e1f.mp3",
+      "description": [
+        "Reptiles with bony shells; live in oceans, freshwater, and on land.",
+        "Some species migrate great distances to nest."
+      ]
+    },
+    {
+      "id": "chameleon",
+      "name": "Chameleon",
+      "category": "reptiles",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Chamaeleo_calyptratus.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/10/01/audio_7c8d9e0f1a.mp3",
+      "description": [
+        "Change color for communication and thermoregulation; projectile tongues.",
+        "Independently moving eyes aid in predator detection."
+      ]
+    },
+    {
+      "id": "frog",
+      "name": "Frog",
+      "category": "amphibians",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Green_frog.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2022/03/11/audio_1a2c3d4e5f.mp3",
+      "description": [
+        "Permeable skin and jumping legs; metamorphose from tadpoles.",
+        "Calls attract mates and defend territories near water."
+      ]
+    },
+    {
+      "id": "salamander",
+      "name": "Salamander",
+      "category": "amphibians",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Salamandra_salamandra_Luc_Viatour.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2022/03/11/audio_2b3c4d5e6f.mp3",
+      "description": [
+        "Tailed amphibians found in moist habitats; many regenerate limbs.",
+        "Diet includes insects, worms, and small invertebrates."
+      ]
+    },
+    {
+      "id": "newt",
+      "name": "Newt",
+      "category": "amphibians",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Ichthyosaura_alpestris_MHNT.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/09/02/audio_3c4d5e6f7a.mp3",
+      "description": [
+        "Semi-aquatic salamanders with smooth skin; split time between water and land.",
+        "Reproduction typically involves aquatic eggs and larvae."
+      ]
+    },
+    {
+      "id": "clownfish",
+      "name": "Clownfish",
+      "category": "fish",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Ocellaris_clownfish_%28Amphiprion_ocellaris%29.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/09/14/audio_ocean_ambient.mp3",
+      "description": [
+        "Bright orange fish living symbiotically with sea anemones.",
+        "Found in warm Indo-Pacific reefs; omnivorous diet."
+      ]
+    },
+    {
+      "id": "goldfish",
+      "name": "Goldfish",
+      "category": "fish",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Goldfish3.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/09/14/audio_bubble_pop.mp3",
+      "description": [
+        "Domesticated carp popular in aquariums and ponds.",
+        "Varieties exhibit diverse colors, fins, and body shapes."
+      ]
+    },
+    {
+      "id": "shark",
+      "name": "Shark",
+      "category": "fish",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/56/White_shark.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/09/14/audio_underwater_swirl.mp3",
+      "description": [
+        "Cartilaginous fish with multiple rows of teeth; apex predators.",
+        "Excellent senses detect faint electrical fields."
+      ]
+    },
+    {
+      "id": "salmon",
+      "name": "Salmon",
+      "category": "fish",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Atlantic_salmon.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/09/14/audio_river_stream.mp3",
+      "description": [
+        "Anadromous fish migrating from ocean to rivers to spawn.",
+        "Important ecological and cultural species in the North Atlantic and Pacific."
+      ]
+    },
+    {
+      "id": "butterfly",
+      "name": "Butterfly",
+      "category": "insects",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/05/Monarch_Butterfly_Danaus_plexippus_Male_2664.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/09/24/audio_4d5e6f7a8b.mp3",
+      "description": [
+        "Insects with scaled wings; complete metamorphosis from caterpillar to adult.",
+        "Important pollinators and ecological indicators."
+      ]
+    },
+    {
+      "id": "bee",
+      "name": "Bee",
+      "category": "insects",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Bee_on_flower.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/10/24/audio_5e6f7a8b9c.mp3",
+      "description": [
+        "Vital pollinators; many species form complex social colonies.",
+        "Collect nectar and pollen; threatened by habitat loss and disease."
+      ]
+    },
+    {
+      "id": "ladybug",
+      "name": "Ladybug",
+      "category": "insects",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Coccinella_septempunctata_LC0202.jpg",
+      "sound": "https://cdn.pixabay.com/audio/2021/09/14/audio_6f7a8b9c0d.mp3",
+      "description": [
+        "Beneficial beetles that eat aphids; bright colors warn predators.",
+        "Common in gardens, fields, and forests worldwide."
+      ]
+    }
+  ]
+}
+
