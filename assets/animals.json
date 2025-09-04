@@ -102,7 +102,7 @@
       "id": "snake",
       "name": "Snake",
       "category": "reptiles",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/25/Green_Tree_Python_%28Morelia_viridis%29_%28231866820%29.jpg",
+      "image": "images/snake.jpg",
       "sound": "https://cdn.pixabay.com/audio/2021/09/17/audio_5a6b7c8d9e.mp3",
       "description": [
         "Limbless reptiles with flexible jaws; occupy diverse habitats.",
@@ -113,7 +113,7 @@
       "id": "turtle",
       "name": "Turtle",
       "category": "reptiles",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Green_turtle_swimming_over_seagrass_meadow_in_Kona.jpg",
+      "image": "images/turtle.jpg",
       "sound": "https://cdn.pixabay.com/audio/2022/03/15/audio_7b8c9d0e1f.mp3",
       "description": [
         "Reptiles with bony shells; live in oceans, freshwater, and on land.",
@@ -146,7 +146,7 @@
       "id": "salamander",
       "name": "Salamander",
       "category": "amphibians",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Salamandra_salamandra_Luc_Viatour.jpg",
+      "image": "images/salamander.jpg",
       "sound": "https://cdn.pixabay.com/audio/2022/03/11/audio_2b3c4d5e6f.mp3",
       "description": [
         "Tailed amphibians found in moist habitats; many regenerate limbs.",
@@ -157,7 +157,7 @@
       "id": "newt",
       "name": "Newt",
       "category": "amphibians",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Ichthyosaura_alpestris_MHNT.jpg",
+      "image": "images/newt.jpg",
       "sound": "https://cdn.pixabay.com/audio/2021/09/02/audio_3c4d5e6f7a.mp3",
       "description": [
         "Semi-aquatic salamanders with smooth skin; split time between water and land.",
@@ -168,7 +168,7 @@
       "id": "clownfish",
       "name": "Clownfish",
       "category": "fish",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Ocellaris_clownfish_%28Amphiprion_ocellaris%29.jpg",
+      "image": "images/clownfish.jpg",
       "sound": "https://cdn.pixabay.com/audio/2021/09/14/audio_ocean_ambient.mp3",
       "description": [
         "Bright orange fish living symbiotically with sea anemones.",
@@ -212,7 +212,7 @@
       "id": "butterfly",
       "name": "Butterfly",
       "category": "insects",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/05/Monarch_Butterfly_Danaus_plexippus_Male_2664.jpg",
+      "image": "images/butterfly.jpg",
       "sound": "https://cdn.pixabay.com/audio/2021/09/24/audio_4d5e6f7a8b.mp3",
       "description": [
         "Insects with scaled wings; complete metamorphosis from caterpillar to adult.",
@@ -234,7 +234,7 @@
       "id": "ladybug",
       "name": "Ladybug",
       "category": "insects",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Coccinella_septempunctata_LC0202.jpg",
+      "image": "images/ladybug.jpg",
       "sound": "https://cdn.pixabay.com/audio/2021/09/14/audio_6f7a8b9c0d.mp3",
       "description": [
         "Beneficial beetles that eat aphids; bright colors warn predators.",
@@ -295,7 +295,7 @@
       "id": "bat",
       "name": "Bat",
       "category": "mammals",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Lesser_short-nosed_fruit_bat_Cynopterus_brachyotis.jpg",
+      "image": "images/bat.jpg",
       "description": [
         "Only mammals capable of sustained flight; vital ecological roles.",
         "Many species use echolocation to navigate in the dark."
@@ -315,7 +315,7 @@
       "id": "crow",
       "name": "Crow",
       "category": "birds",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Carrion_Crow%2C_Corvus_corone.jpg",
+      "image": "images/crow.jpg",
       "description": [
         "Highly intelligent birds capable of problem-solving and tool use.",
         "Adaptable to rural and urban environments."
@@ -345,7 +345,7 @@
       "id": "flamingo",
       "name": "Flamingo",
       "category": "birds",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Flamingo_DW.jpg",
+      "image": "images/flamingo.jpg",
       "description": [
         "Recognizable by pink plumage and long legs; filter feeders.",
         "Color comes from carotenoid pigments in their diet."
