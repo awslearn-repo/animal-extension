@@ -62,11 +62,6 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeModal();
     });
-
-    // If a media error occurs (e.g., 404/blocked), provide an immediate audible fallback
-    audioEl.addEventListener('error', async () => {
-      try { await synthBeep(); } catch {}
-    });
   }
 
   function setupCategoryBar() {
@@ -187,6 +182,13 @@
     name.textContent = animal.name;
     pill.textContent = resolveCategoryName(animal.category);
 
+    // Hide or disable play button when no sound is available
+    if (!animal.sound) {
+      play.setAttribute('aria-hidden', 'true');
+      play.setAttribute('disabled', 'true');
+      play.style.display = 'none';
+    }
+
     card.addEventListener('click', () => openModal(animal));
     card.addEventListener('keypress', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -196,6 +198,7 @@
     });
     play.addEventListener('click', (e) => {
       e.stopPropagation();
+      if (!animal.sound) return;
       playSound(animal);
     });
 
@@ -218,7 +221,9 @@
       el.textContent = p;
       modalBodyEl.appendChild(el);
     }
-    modalPlayEl.onclick = () => playSound(animal);
+    modalPlayEl.disabled = !animal.sound;
+    modalPlayEl.textContent = animal.sound ? 'Play Sound' : 'No Sound Available';
+    modalPlayEl.onclick = () => { if (animal.sound) playSound(animal); };
     modalEl.classList.add('show');
     modalEl.setAttribute('aria-hidden', 'false');
   }
@@ -233,26 +238,21 @@
    * @param {Animal} animal
    */
   async function playSound(animal) {
+    if (!animal.sound) return;
     try {
-      if (animal.sound) {
-        const resolved = new URL(animal.sound, location.href).href;
-        const isNewSrc = audioEl.src !== resolved;
-        if (isNewSrc) {
-          audioEl.src = resolved;
-          // Force reload to avoid stale network/cache edge cases
-          audioEl.load();
-        }
-        audioEl.muted = isMuted;
-        // Always start from the beginning for quick feedback
-        try { audioEl.currentTime = 0; } catch {}
-        await audioEl.play();
-        return;
+      const resolved = new URL(animal.sound, location.href).href;
+      const isNewSrc = audioEl.src !== resolved;
+      if (isNewSrc) {
+        audioEl.src = resolved;
+        // Force reload to avoid stale network/cache edge cases
+        audioEl.load();
       }
-      throw new Error('No sound URL');
+      audioEl.muted = isMuted;
+      // Always start from the beginning for quick feedback
+      try { audioEl.currentTime = 0; } catch {}
+      await audioEl.play();
     } catch (err) {
-      try {
-        await synthBeep();
-      } catch {}
+      console.error(err);
     }
   }
 
