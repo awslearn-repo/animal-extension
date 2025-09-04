@@ -137,7 +137,7 @@
       figure.className = 'card';
       figure.innerHTML = `
         <div class="card-media">
-          <img src="${escapeHtml(firstAnimal.imageUrl)}" alt="${escapeHtml(category.name)} cover" loading="lazy">
+          <img src="${escapeHtml(firstAnimal.imageUrl)}" alt="${escapeHtml(category.name)} cover" loading="lazy" referrerpolicy="no-referrer" onerror="if(!this.dataset.fallback){this.dataset.fallback='1'; this.src='https://placehold.co/800x600?text=${encodeURIComponent(category.name)}';}">
         </div>
         <div class="chip">${category.animals.length} animals</div>
         <div class="card-title">${escapeHtml(category.name)}</div>
@@ -160,7 +160,7 @@
       card.setAttribute('tabindex', '0');
       card.innerHTML = `
         <div class="card-media">
-          <img src="${escapeHtml(animal.imageUrl)}" alt="${escapeHtml(animal.name)}" loading="lazy">
+          <img src="${escapeHtml(animal.imageUrl)}" alt="${escapeHtml(animal.name)}" loading="lazy" referrerpolicy="no-referrer" onerror="if(!this.dataset.fallback){this.dataset.fallback='1'; this.src='https://placehold.co/800x600?text=${encodeURIComponent(animal.name)}';}">
         </div>
         <div class="card-title">${escapeHtml(animal.name)}</div>
       `;
@@ -181,6 +181,12 @@
     els.modalTitle.textContent = animal.name;
     els.modalImage.src = animal.imageUrl;
     els.modalImage.alt = `${animal.name} large photo`;
+    els.modalImage.referrerPolicy = 'no-referrer';
+    els.modalImage.onerror = () => {
+      if (els.modalImage.dataset.fallback === '1') return;
+      els.modalImage.dataset.fallback = '1';
+      els.modalImage.src = `https://placehold.co/1200x800?text=${encodeURIComponent(animal.name)}`;
+    };
     els.modalText.innerHTML = animal.description.map(p => `<p>${escapeHtml(p)}</p>`).join('');
 
     if (state.audio) { try { state.audio.pause(); } catch {} }

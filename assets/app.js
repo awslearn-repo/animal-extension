@@ -133,6 +133,12 @@
 
     img.src = animal.image;
     img.alt = `${animal.name} (${resolveCategoryName(animal.category)})`;
+    img.referrerPolicy = 'no-referrer';
+    img.onerror = () => {
+      if (img.dataset.fallback === '1') return;
+      img.dataset.fallback = '1';
+      img.src = `https://placehold.co/800x600?text=${encodeURIComponent(animal.name)}`;
+    };
     name.textContent = animal.name;
     pill.textContent = resolveCategoryName(animal.category);
 
@@ -159,6 +165,12 @@
   function openModal(animal) {
     modalImgEl.src = animal.image;
     modalImgEl.alt = animal.name;
+    modalImgEl.referrerPolicy = 'no-referrer';
+    modalImgEl.onerror = () => {
+      if (modalImgEl.dataset.fallback === '1') return;
+      modalImgEl.dataset.fallback = '1';
+      modalImgEl.src = `https://placehold.co/1200x800?text=${encodeURIComponent(animal.name)}`;
+    };
     modalTitleEl.textContent = animal.name;
     modalCategoryEl.textContent = resolveCategoryName(animal.category);
     modalBodyEl.innerHTML = '';
