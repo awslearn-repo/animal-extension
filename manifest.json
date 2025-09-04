@@ -3,6 +3,8 @@
   "short_name": "Animals",
   "description": "Explore animals with images, sounds, and categories.",
   "id": ".",
+  "version": "1.0.0",
+  "manifest_version": 3,
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
