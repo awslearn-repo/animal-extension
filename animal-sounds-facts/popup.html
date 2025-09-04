@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Animal Sounds &amp; Facts</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <button id="backButton" class="back-button" aria-label="Back" hidden>← Back</button>
+      <h1 class="title">Animal Sounds &amp; Facts</h1>
+    </header>
+    <main id="content" class="content" role="main" aria-live="polite"></main>
+
+    <template id="cardTemplate">
+      <div class="card" tabindex="0" role="button" aria-pressed="false">
+        <img class="card-image" alt="" />
+        <div class="card-label"></div>
+      </div>
+    </template>
+
+    <script src="popup.js" defer></script>
+  </body>
+  </html>
