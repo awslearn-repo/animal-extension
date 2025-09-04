@@ -20,8 +20,12 @@
   /** @type {HTMLAudioElement} */
   const audioEl = new Audio();
   audioEl.preload = 'auto';
+  audioEl.crossOrigin = 'anonymous';
   let currentCategory = 'all';
   let isMuted = false;
+  // Reusable AudioContext for synthesized fallback tones
+  /** @type {AudioContext | null} */
+  let beepContext = null;
 
   function setStatus(text, isError = false) {
     statusEl.textContent = text;
@@ -57,6 +61,11 @@
     modalCloseEl.addEventListener('click', closeModal);
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeModal();
+    });
+
+    // If a media error occurs (e.g., 404/blocked), provide an immediate audible fallback
+    audioEl.addEventListener('error', async () => {
+      try { await synthBeep(); } catch {}
     });
   }
 
@@ -226,10 +235,16 @@
   async function playSound(animal) {
     try {
       if (animal.sound) {
-        if (audioEl.src !== new URL(animal.sound, location.href).href) {
-          audioEl.src = animal.sound;
+        const resolved = new URL(animal.sound, location.href).href;
+        const isNewSrc = audioEl.src !== resolved;
+        if (isNewSrc) {
+          audioEl.src = resolved;
+          // Force reload to avoid stale network/cache edge cases
+          audioEl.load();
         }
         audioEl.muted = isMuted;
+        // Always start from the beginning for quick feedback
+        try { audioEl.currentTime = 0; } catch {}
         await audioEl.play();
         return;
       }
@@ -243,18 +258,26 @@
 
   // Simple WebAudio synth as a guaranteed fallback sound
   async function synthBeep() {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const o = ctx.createOscillator();
-    const g = ctx.createGain();
+    const AC = /** @type {typeof AudioContext} */ (window.AudioContext || window.webkitAudioContext);
+    if (!AC) return;
+    if (!beepContext || beepContext.state === 'closed') {
+      beepContext = new AC();
+    }
+    if (beepContext.state === 'suspended') {
+      try { await beepContext.resume(); } catch {}
+    }
+    const o = beepContext.createOscillator();
+    const g = beepContext.createGain();
     o.type = 'triangle';
     o.frequency.value = 660;
-    g.gain.value = isMuted ? 0 : 0.02;
-    o.connect(g).connect(ctx.destination);
+    // Slightly louder so users can hear the fallback clearly
+    g.gain.value = isMuted ? 0 : 0.06;
+    o.connect(g).connect(beepContext.destination);
     o.start();
     await new Promise((r) => setTimeout(r, 200));
-    o.frequency.exponentialRampToValueAtTime(330, ctx.currentTime + 0.15);
-    g.gain.exponentialRampToValueAtTime(isMuted ? 0 : 0.0001, ctx.currentTime + 0.18);
-    setTimeout(() => { o.stop(); ctx.close(); }, 220);
+    o.frequency.exponentialRampToValueAtTime(330, beepContext.currentTime + 0.15);
+    g.gain.exponentialRampToValueAtTime(isMuted ? 0 : 0.0001, beepContext.currentTime + 0.18);
+    setTimeout(() => { try { o.stop(); } catch {} }, 220);
   }
 
   function enableTilt(card) {
