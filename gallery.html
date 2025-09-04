@@ -132,9 +132,9 @@
     function setImageWithFallback(img, primaryUrl, name, width = 800, height = 600) {
       const placeholder = `https://placehold.co/${width}x${height}?text=${encodeURIComponent(name || 'Image')}`;
       const candidates = [];
-      if (primaryUrl) candidates.push(primaryUrl);
       const wm = buildWikimediaFallbackUrl(primaryUrl, Math.max(width, 800));
       if (wm) candidates.push(wm);
+      if (primaryUrl) candidates.push(primaryUrl);
       let index = 0;
       img.referrerPolicy = 'no-referrer';
       const tryNext = () => {
