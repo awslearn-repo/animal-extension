@@ -114,6 +114,11 @@
   <meta name="description" content="All animal images in one gallery view" />
   <meta name="robots" content="noindex" />
   <script>
+    // Reusable audio element for playing animal sounds on click
+    const audioEl = new Audio();
+    audioEl.preload = 'auto';
+    audioEl.crossOrigin = 'anonymous';
+
     function buildWikimediaFallbackUrl(url, width) {
       try {
         const u = new URL(url, location.href);
@@ -176,6 +181,7 @@
           const categoryId = animal?.category || 'Unknown';
           const category = categoryId.charAt(0).toUpperCase() + categoryId.slice(1);
           const imageUrl = animal?.image || '';
+          const soundUrl = animal?.sound || '';
 
           const card = document.createElement('article');
           card.className = 'card';
@@ -186,6 +192,25 @@
           img.decoding = 'async';
           img.alt = `${name} (${category})`;
           setImageWithFallback(img, imageUrl, name, 800, 600);
+          // Click image to play this animal's specific sound (when available)
+          if (soundUrl) {
+            img.style.cursor = 'pointer';
+            img.title = 'Play sound';
+            img.addEventListener('click', async (e) => {
+              try {
+                const resolved = new URL(soundUrl, location.href).href;
+                const isNewSrc = audioEl.src !== resolved;
+                if (isNewSrc) {
+                  audioEl.src = resolved;
+                  audioEl.load();
+                }
+                try { audioEl.currentTime = 0; } catch {}
+                await audioEl.play();
+              } catch (err) {
+                console.error(err);
+              }
+            });
+          }
 
           const meta = document.createElement('div');
           meta.className = 'meta';
