@@ -52,14 +52,20 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,.25);
     }
+    .card:hover { transform: translateY(-4px); border-color: #2a3a4a; box-shadow: 0 12px 28px rgba(0,0,0,.35); }
     .thumb {
       width: 100%;
       aspect-ratio: 4 / 3;
       object-fit: cover;
       background: #0f1318;
       display: block;
+      filter: saturate(105%) contrast(102%);
+      transition: transform .35s ease, filter .35s ease;
     }
+    .card:hover .thumb { transform: scale(1.03); filter: saturate(110%) contrast(106%); }
     .meta {
       padding: 10px 12px 12px 12px;
       display: flex;
@@ -87,9 +93,7 @@
       color: var(--muted);
       text-align: center;
     }
-    .error {
-      color: var(--error);
-    }
+    .error { color: var(--error); }
     .sr-only {
       position: absolute;
       width: 1px;
@@ -115,19 +119,21 @@
       const statusElement = document.getElementById('status');
       try {
         statusElement.textContent = 'Loading images…';
-        const response = await fetch('animal-sphere/animals.json', { cache: 'no-store' });
+        const response = await fetch('assets/animals.json', { cache: 'no-store' });
         if (!response.ok) {
           throw new Error('Failed to load animals.json: ' + response.status + ' ' + response.statusText);
         }
-        const animals = await response.json();
-        if (!Array.isArray(animals)) {
-          throw new Error('Unexpected JSON format. Expected an array.');
+        const payload = await response.json();
+        const animals = Array.isArray(payload?.animals) ? payload.animals : [];
+        if (animals.length === 0) {
+          throw new Error('Unexpected JSON format or empty animals list.');
         }
 
         const fragment = document.createDocumentFragment();
         for (const animal of animals) {
           const name = animal?.name || 'Unknown';
-          const category = animal?.category || 'Unknown';
+          const categoryId = animal?.category || 'Unknown';
+          const category = categoryId.charAt(0).toUpperCase() + categoryId.slice(1);
           const imageUrl = animal?.image || '';
 
           const card = document.createElement('article');

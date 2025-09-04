@@ -9,7 +9,7 @@ Quick start:
 3. Click a card to view details and play sounds. Use the sound toggle in the header to mute/unmute.
 
 Notes:
-- The previous 3D sphere pages are deprecated and not used. Use `index.html` instead.
+- The previous 3D sphere implementation has been removed. Use `index.html` instead.
 - Remote images and sounds are loaded from Wikipedia and Pixabay; a short synthesized tone plays if any sound URL fails.
 
 Directories:
