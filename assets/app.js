@@ -95,6 +95,48 @@
     });
   }
 
+  function buildWikimediaFallbackUrl(url, width) {
+    try {
+      const u = new URL(url, location.href);
+      if (u.hostname !== 'upload.wikimedia.org') return null;
+      const parts = u.pathname.split('/');
+      const fileName = parts[parts.length - 1];
+      if (!fileName) return null;
+      const encoded = encodeURIComponent(fileName);
+      const w = width ? `?width=${width}` : '';
+      return `https://commons.wikimedia.org/wiki/Special:FilePath/${encoded}${w}`;
+    } catch {
+      return null;
+    }
+  }
+
+  function setImageWithFallback(img, primaryUrl, name, width = 800, height = 600) {
+    const placeholder = `https://placehold.co/${width}x${height}?text=${encodeURIComponent(name || 'Image')}`;
+    const candidates = [];
+    if (primaryUrl) candidates.push(primaryUrl);
+    const wm = buildWikimediaFallbackUrl(primaryUrl, Math.max(width, 800));
+    if (wm) candidates.push(wm);
+    let index = 0;
+    img.referrerPolicy = 'no-referrer';
+    const tryNext = () => {
+      if (index < candidates.length) {
+        img.src = candidates[index++];
+      } else {
+        img.src = placeholder;
+      }
+    };
+    img.onerror = () => {
+      if (img.dataset.fallbackTried === '1') {
+        img.onerror = null;
+        img.src = placeholder;
+        return;
+      }
+      img.dataset.fallbackTried = '1';
+      tryNext();
+    };
+    tryNext();
+  }
+
   function findCategoryIdByName(name) {
     const match = dataStore.categories.find((c) => c.name === name);
     return match ? match.id : 'all';
@@ -131,14 +173,8 @@
       card.style.animationDelay = `${Math.min(index * 0.03, 0.6)}s`;
     }
 
-    img.src = animal.image;
     img.alt = `${animal.name} (${resolveCategoryName(animal.category)})`;
-    img.referrerPolicy = 'no-referrer';
-    img.onerror = () => {
-      if (img.dataset.fallback === '1') return;
-      img.dataset.fallback = '1';
-      img.src = `https://placehold.co/800x600?text=${encodeURIComponent(animal.name)}`;
-    };
+    setImageWithFallback(img, animal.image, animal.name, 800, 600);
     name.textContent = animal.name;
     pill.textContent = resolveCategoryName(animal.category);
 
@@ -163,14 +199,8 @@
   }
 
   function openModal(animal) {
-    modalImgEl.src = animal.image;
     modalImgEl.alt = animal.name;
-    modalImgEl.referrerPolicy = 'no-referrer';
-    modalImgEl.onerror = () => {
-      if (modalImgEl.dataset.fallback === '1') return;
-      modalImgEl.dataset.fallback = '1';
-      modalImgEl.src = `https://placehold.co/1200x800?text=${encodeURIComponent(animal.name)}`;
-    };
+    setImageWithFallback(modalImgEl, animal.image, animal.name, 1200, 800);
     modalTitleEl.textContent = animal.name;
     modalCategoryEl.textContent = resolveCategoryName(animal.category);
     modalBodyEl.innerHTML = '';
