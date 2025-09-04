@@ -22,12 +22,34 @@
   };
 
   async function loadData() {
-    const response = await fetch('data/animals.json', { cache: 'no-store' });
+    // Load flat assets dataset and transform to explorer's nested shape
+    const response = await fetch('assets/animals.json', { cache: 'no-store' });
     if (!response.ok) {
       throw new Error(`Failed to load dataset: ${response.status}`);
     }
-    const json = await response.json();
-    state.data = json;
+    const assets = await response.json();
+
+    const categories = Array.isArray(assets?.categories) ? assets.categories : [];
+    const animals = Array.isArray(assets?.animals) ? assets.animals : [];
+
+    // Exclude synthetic 'all' category to avoid empty sections
+    const realCategories = categories.filter((c) => c.id !== 'all');
+
+    const nested = {
+      categories: realCategories.map((cat) => ({
+        name: cat.name,
+        animals: animals
+          .filter((a) => a.category === cat.id)
+          .map((a) => ({
+            name: a.name,
+            imageUrl: a.image,
+            soundUrl: a.sound,
+            description: Array.isArray(a.description) ? a.description : []
+          }))
+      }))
+    };
+
+    state.data = nested;
   }
 
   function navigate(hash) {
