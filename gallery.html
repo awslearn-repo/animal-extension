@@ -147,7 +147,9 @@
           img.referrerPolicy = 'no-referrer';
           img.src = imageUrl;
           img.onerror = () => {
-            img.alt = `${name} image failed to load`;
+            if (img.dataset.fallback === '1') return;
+            img.dataset.fallback = '1';
+            img.src = `https://placehold.co/800x600?text=${encodeURIComponent(name)}`;
           };
 
           const meta = document.createElement('div');
