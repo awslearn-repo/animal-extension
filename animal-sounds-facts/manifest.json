@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Animal Sounds & Facts",
+  "version": "1.0.0",
+  "description": "Browse animal categories, see details, and play sounds in a clean popup UI.",
+  "action": {
+    "default_title": "Animal Sounds & Facts",
+    "default_popup": "popup.html"
+  }
+}

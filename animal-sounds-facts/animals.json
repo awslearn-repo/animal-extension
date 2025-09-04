@@ -1,0 +1,64 @@
+{
+  "categories": [
+    { "id": "birds", "name": "Birds", "image": "images/categories/birds.svg" },
+    { "id": "mammals", "name": "Mammals", "image": "images/categories/mammals.svg" }
+  ],
+  "animals": [
+    {
+      "id": "blue-jay",
+      "name": "Blue Jay",
+      "category": "birds",
+      "image": "images/birds/blue-jay.svg",
+      "sound": "sounds/birds/blue-jay.mp3",
+      "description": [
+        "Blue jays are vibrant songbirds native to North America, easily recognized by their blue crest and bold white and black markings.",
+        "Habitat: Blue jays thrive in mixed woodlands, suburban parks, and backyards, often nesting in oak trees where acorns are abundant.",
+        "Diet: They are opportunistic omnivores, eating acorns, seeds, nuts, insects, and occasionally small vertebrates or eggs.",
+        "Behavior: Known for their intelligence and complex social behaviors, blue jays can mimic hawk calls and cache food for later.",
+        "Fun facts: A single jay can carry several acorns in its throat pouch, helping disperse oak trees across forests."
+      ]
+    },
+    {
+      "id": "owl",
+      "name": "Owl",
+      "category": "birds",
+      "image": "images/birds/owl.svg",
+      "sound": "sounds/birds/owl.mp3",
+      "description": [
+        "Owls are nocturnal raptors with forward-facing eyes and silent flight, adapted for hunting in low light.",
+        "Habitat: Found worldwide in habitats ranging from tundra to deserts, species select nesting sites in trees, cliffs, or burrows.",
+        "Diet: Primarily carnivorous, owls prey on rodents, insects, and other small animals, swallowing prey whole and regurgitating pellets.",
+        "Behavior: Their asymmetrical ears help pinpoint sound, and their flexible neck allows rotation up to about 270 degrees.",
+        "Fun facts: The leading edges of their feathers have a comb-like fringe that muffles sound, enabling near-silent flight."
+      ]
+    },
+    {
+      "id": "lion",
+      "name": "Lion",
+      "category": "mammals",
+      "image": "images/mammals/lion.svg",
+      "sound": "sounds/mammals/lion.mp3",
+      "description": [
+        "Lions are large social cats native to Africa and parts of India, renowned for their strength and the males' striking manes.",
+        "Habitat: Lions inhabit savannas, grasslands, and open woodlands where large herbivores are plentiful.",
+        "Diet: They are apex predators, hunting zebras, wildebeest, and other ungulates; females often coordinate hunts within the pride.",
+        "Behavior: Prides typically include related females, their cubs, and a coalition of males; roaring communicates territory over long distances.",
+        "Fun facts: A lion's roar can be heard up to 8 km away and helps strengthen social bonds within the pride."
+      ]
+    },
+    {
+      "id": "otter",
+      "name": "Otter",
+      "category": "mammals",
+      "image": "images/mammals/otter.svg",
+      "sound": "sounds/mammals/otter.mp3",
+      "description": [
+        "Otters are semi-aquatic mammals known for playful behavior and streamlined bodies adapted for swimming.",
+        "Habitat: Species occur in rivers, lakes, and coastal waters, relying on clean waterways and abundant cover.",
+        "Diet: Otters feed on fish, crustaceans, and mollusks, using dexterous paws to manipulate prey and sometimes rocks as tools.",
+        "Behavior: Their dense, water-resistant fur traps air for insulation; many species maintain social groups for foraging and care.",
+        "Fun facts: Sea otters hold hands while resting to avoid drifting apart and often keep a favorite stone in a loose underarm pouch."
+      ]
+    }
+  ]
+}
