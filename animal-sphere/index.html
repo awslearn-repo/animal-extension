@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D Animal Sphere</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    /* Fallback if styles.css fails to load */
+    body { margin: 0; background: #0b1020; color: #fff; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+  </style>
+  <meta name="description" content="Interactive 3D collage of animals on a rotating sphere with details and sounds" />
+</head>
+<body>
+  <div id="scene" aria-label="3D animal sphere"></div>
+
+  <aside id="detailPanel" aria-live="polite" aria-hidden="true">
+    <button id="closePanel" aria-label="Close details">×</button>
+    <div class="media">
+      <img id="detailImage" alt="Selected animal" />
+      <button id="playSound" aria-label="Play animal sound">Play Sound</button>
+    </div>
+    <div class="content">
+      <h2 id="detailTitle"></h2>
+      <div id="detailText"></div>
+    </div>
+  </aside>
+  <div id="overlay" aria-hidden="true"></div>
+</body>
+</html>
+<html lang=en>
+<head>
+  <meta charset=UTF-8 />
+  <meta name=viewport content=width=device-width,
