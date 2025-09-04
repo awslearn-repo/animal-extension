@@ -1,14 +1,14 @@
 {
   "categories": [
-    { "id": "birds", "name": "Birds", "image": "images/categories/birds.svg" },
-    { "id": "mammals", "name": "Mammals", "image": "images/categories/mammals.svg" }
+    { "id": "birds", "name": "Birds", "image": "images/categories/birds.jpg" },
+    { "id": "mammals", "name": "Mammals", "image": "images/categories/mammals.jpg" }
   ],
   "animals": [
     {
       "id": "blue-jay",
       "name": "Blue Jay",
       "category": "birds",
-      "image": "images/birds/blue-jay.svg",
+      "image": "images/birds/blue-jay.jpg",
       "sound": "sounds/birds/blue-jay.mp3",
       "description": [
         "Blue jays are vibrant songbirds native to North America, easily recognized by their blue crest and bold white and black markings.",
@@ -22,7 +22,7 @@
       "id": "owl",
       "name": "Owl",
       "category": "birds",
-      "image": "images/birds/owl.svg",
+      "image": "images/birds/owl.jpg",
       "sound": "sounds/birds/owl.mp3",
       "description": [
         "Owls are nocturnal raptors with forward-facing eyes and silent flight, adapted for hunting in low light.",
@@ -36,7 +36,7 @@
       "id": "lion",
       "name": "Lion",
       "category": "mammals",
-      "image": "images/mammals/lion.svg",
+      "image": "images/mammals/lion.jpg",
       "sound": "sounds/mammals/lion.mp3",
       "description": [
         "Lions are large social cats native to Africa and parts of India, renowned for their strength and the males' striking manes.",
@@ -50,7 +50,7 @@
       "id": "otter",
       "name": "Otter",
       "category": "mammals",
-      "image": "images/mammals/otter.svg",
+      "image": "images/mammals/otter.jpg",
       "sound": "sounds/mammals/otter.mp3",
       "description": [
         "Otters are semi-aquatic mammals known for playful behavior and streamlined bodies adapted for swimming.",
