@@ -182,12 +182,7 @@
     name.textContent = animal.name;
     pill.textContent = resolveCategoryName(animal.category);
 
-    // Hide or disable play button when no sound is available
-    if (!animal.sound) {
-      play.setAttribute('aria-hidden', 'true');
-      play.setAttribute('disabled', 'true');
-      play.style.display = 'none';
-    }
+    // Keep play button visible even without sound; we'll synthesize a beep as fallback
 
     card.addEventListener('click', () => openModal(animal));
     card.addEventListener('keypress', (e) => {
@@ -198,8 +193,11 @@
     });
     play.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (!animal.sound) return;
-      playSound(animal);
+      if (animal.sound) {
+        playSound(animal);
+      } else {
+        synthBeep();
+      }
     });
 
     enableTilt(card);
@@ -221,9 +219,9 @@
       el.textContent = p;
       modalBodyEl.appendChild(el);
     }
-    modalPlayEl.disabled = !animal.sound;
-    modalPlayEl.textContent = animal.sound ? 'Play Sound' : 'No Sound Available';
-    modalPlayEl.onclick = () => { if (animal.sound) playSound(animal); };
+    modalPlayEl.disabled = false;
+    modalPlayEl.textContent = animal.sound ? 'Play Sound' : 'Play Beep';
+    modalPlayEl.onclick = () => { if (animal.sound) { playSound(animal); } else { synthBeep(); } };
     modalEl.classList.add('show');
     modalEl.setAttribute('aria-hidden', 'false');
   }
@@ -238,9 +236,14 @@
    * @param {Animal} animal
    */
   async function playSound(animal) {
-    if (!animal.sound) return;
+    // Prefer the animal's own sound; otherwise try a category sibling's sound as a proxy
+    let source = animal.sound || findCategoryFallbackSound(animal.category);
+    if (!source) {
+      await synthBeep();
+      return;
+    }
     try {
-      const resolved = new URL(animal.sound, location.href).href;
+      const resolved = new URL(source, location.href).href;
       const isNewSrc = audioEl.src !== resolved;
       if (isNewSrc) {
         audioEl.src = resolved;
@@ -253,7 +256,14 @@
       await audioEl.play();
     } catch (err) {
       console.error(err);
+      // Network or playback failed; provide audible feedback anyway
+      try { await synthBeep(); } catch {}
     }
+  }
+
+  function findCategoryFallbackSound(categoryId) {
+    const mate = dataStore.animals.find((a) => a.category === categoryId && !!a.sound);
+    return mate ? mate.sound : '';
   }
 
   // Simple WebAudio synth as a guaranteed fallback sound
