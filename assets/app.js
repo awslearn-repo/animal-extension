@@ -182,8 +182,7 @@
     name.textContent = animal.name;
     pill.textContent = resolveCategoryName(animal.category);
 
-    // Keep play button visible even without sound; we'll synthesize a beep as fallback
-
+    // Keep play button visible; we'll attempt to play an animal or category fallback sound, else beep
     card.addEventListener('click', () => openModal(animal));
     card.addEventListener('keypress', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -193,11 +192,8 @@
     });
     play.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (animal.sound) {
-        playSound(animal);
-      } else {
-        synthBeep();
-      }
+      // Always try to play an actual sound with category fallback before beeping
+      playSound(animal);
     });
 
     enableTilt(card);
@@ -220,8 +216,10 @@
       modalBodyEl.appendChild(el);
     }
     modalPlayEl.disabled = false;
-    modalPlayEl.textContent = animal.sound ? 'Play Sound' : 'Play Beep';
-    modalPlayEl.onclick = () => { if (animal.sound) { playSound(animal); } else { synthBeep(); } };
+    // Update label based on availability in animal or category; still calls playSound which handles fallback
+    const hasAnySound = !!(animal.sound || findCategoryFallbackSound(animal.category));
+    modalPlayEl.textContent = hasAnySound ? 'Play Sound' : 'Play Beep';
+    modalPlayEl.onclick = () => { playSound(animal); };
     modalEl.classList.add('show');
     modalEl.setAttribute('aria-hidden', 'false');
   }
