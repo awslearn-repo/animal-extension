@@ -253,9 +253,11 @@
       audioEl.muted = isMuted;
       // Always start from the beginning for quick feedback
       try { audioEl.currentTime = 0; } catch {}
-      await audioEl.play();
-    } catch (err) {
-      console.error(err);
+      const playPromise = audioEl.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => { try { synthBeep(); } catch {} });
+      }
+    } catch {
       // Network or playback failed; provide audible feedback anyway
       try { await synthBeep(); } catch {}
     }
