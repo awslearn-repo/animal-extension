@@ -117,7 +117,8 @@
     // Reusable audio element for playing animal sounds on click
     const audioEl = new Audio();
     audioEl.preload = 'auto';
-    audioEl.crossOrigin = 'anonymous';
+    // Do not force CORS for third-party audio; avoid blocked requests
+    audioEl.referrerPolicy = 'no-referrer';
 
     function buildWikimediaFallbackUrl(url, width) {
       try {

@@ -20,7 +20,9 @@
   /** @type {HTMLAudioElement} */
   const audioEl = new Audio();
   audioEl.preload = 'auto';
-  audioEl.crossOrigin = 'anonymous';
+  // Avoid forcing a CORS fetch which can fail for some third-party hosts
+  // Keep playback simple; we don't pipe this element into WebAudio
+  audioEl.referrerPolicy = 'no-referrer';
   let currentCategory = 'all';
   let isMuted = false;
   // Reusable AudioContext for synthesized fallback tones
