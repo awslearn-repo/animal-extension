@@ -14,7 +14,7 @@
       "name": "Blue Jay",
       "category": "birds",
       "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Cyanocitta-cristata-004.jpg",
-      "sound": "https://cdn.pixabay.com/audio/2022/03/15/audio_8a1db1b3ff.mp3",
+      "sound": "audio/blue_jay_1.ogg",
       "description": [
         "Vibrant songbird native to North America, noted for bold crests and blue plumage.",
         "Omnivorous diet of acorns, seeds, and insects; known for caching food.",
