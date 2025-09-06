@@ -26,7 +26,7 @@
       "name": "Owl",
       "category": "birds",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Tyto_alba_%28Scopoli%2C_1769%29.jpg/640px-Tyto_alba_%28Scopoli%2C_1769%29.jpg",
-      "sound": "https://cdn.pixabay.com/audio/2021/08/08/audio_6a2e3a5d02.mp3",
+      "sound": "https://commons.wikimedia.org/wiki/Special:FilePath/Tyto_alba_-_Western_Barn_Owl_XC592539.mp3",
       "description": [
         "Nocturnal raptors with silent flight and exceptional hearing.",
         "Hunt small mammals and insects; forward-facing eyes aid depth perception."
@@ -37,7 +37,7 @@
       "name": "Eagle",
       "category": "birds",
       "image": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Bald_Eagle_Portrait.jpg",
-      "sound": "https://cdn.pixabay.com/audio/2021/09/02/audio_7f3f2ef1b5.mp3",
+      "sound": "https://commons.wikimedia.org/wiki/Special:FilePath/Bald_Eagle_Yellowstone_National_Park.ogg",
       "description": [
         "Large birds of prey with powerful talons and keen eyesight.",
         "Often nest on cliffs or tall trees; diet includes fish and small mammals."
@@ -48,7 +48,7 @@
       "name": "Lion",
       "category": "mammals",
       "image": "https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg",
-      "sound": "https://cdn.pixabay.com/audio/2022/03/15/audio_2f5d7b8c3c.mp3",
+      "sound": "https://commons.wikimedia.org/wiki/Special:FilePath/Lion_Mad.ogg",
       "description": [
         "Social big cats living in prides; iconic roars travel kilometers.",
         "Hunt ungulates like zebra and wildebeest on African savannas."
