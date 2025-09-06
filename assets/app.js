@@ -16,6 +16,7 @@
   const modalCategoryEl = document.querySelector('.modal__category');
   const modalPlayEl = document.getElementById('modalPlay');
   const muteToggleEl = document.getElementById('muteToggle');
+  const stopAllEl = document.getElementById('stopAll');
 
   /** @type {HTMLAudioElement} */
   const audioEl = new Audio();
@@ -59,6 +60,15 @@
       muteToggleEl.setAttribute('aria-pressed', String(isMuted));
       muteToggleEl.textContent = isMuted ? '🔈 Sound Off' : '🔊 Sound On';
     });
+
+    if (stopAllEl) {
+      stopAllEl.addEventListener('click', () => {
+        stopAllSounds();
+        if (modalPlayEl) {
+          modalPlayEl.textContent = 'Play Sound';
+        }
+      });
+    }
 
     modalCloseEl.addEventListener('click', closeModal);
     document.addEventListener('keydown', (e) => {
@@ -260,6 +270,15 @@
     } catch {
       // Network or playback failed; provide audible feedback anyway
       try { await synthBeep(); } catch {}
+    }
+  }
+
+  function stopAllSounds() {
+    try { audioEl.pause(); } catch {}
+    try { audioEl.currentTime = 0; } catch {}
+    if (beepContext) {
+      try { beepContext.close(); } catch {}
+      beepContext = null;
     }
   }
 
