@@ -70,7 +70,7 @@
       "name": "Elephant",
       "category": "mammals",
       "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg",
-      "sound": "https://cdn.pixabay.com/audio/2022/03/15/audio_7a5c6f2e1b.mp3",
+      "sound": "assets/sounds/elephant-trumpets-growls-6047.mp3",
       "description": [
         "Largest land mammals; complex social structures and long lifespans.",
         "Use infrasonic rumbles to communicate over distance."
